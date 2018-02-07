@@ -1,0 +1,34 @@
+Title: MLFB - Repeated Series of Requests Separated by a few second time slice
+
+Author: Stephen Sampson B00568374
+
+Purpose: The purpose of this test is to see how the web server will react when the client
+sends a series of HTTP requests in a random order where some of the requests are for the same file,
+delays for a few seconds, and then sends another series of requests. This tests that the server
+sleeps and wakes properly and that a previously processed queue has no impact on a new queue.
+
+
+Expected Result: The printed sequence on the server side will be 
+
+Request 6 Completed
+Request 3 Completed
+Request 4 Completed
+Request 5 Completed
+Request 8 Completed
+Request 2 Completed
+Request 7 Completed
+Request 1 Completed
+
+Request 14 Completed
+Request 11 Completed
+Request 12 Completed
+Request 13 Completed
+Request 16 Completed
+Request 10 Completed
+Request 15 Completed
+Request 9 Completed
+
+On the client side, eight HTTP responses will be sent 'HTTP/1.1 200 OK' followed by the files
+that were requested. It will then display nothing for a few seconds until the next batch of
+requests comes through at which point it will display another eight HTTP responses followed
+by the files that were requested

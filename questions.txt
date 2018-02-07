@@ -1,0 +1,80 @@
+QUESTION 1:
+
+Given a series of simultaneous requests, the SJF scheduler should work best. For process scheduling SJF is impossible to implement
+but given the fact that we know (assume) that requests for a larger file will take longer to process than requests
+for a smaller file, SJF will minimize the average wait time for any series of requests. 
+
+The SJF scheduler would not work in the case that you had a bunch of clients send requests for small files while the scheduler was in
+the process of sending a large file. The scheduler would need to wait until the large file was sent before queueing and processing the
+smaller subsequent requests. This is known as starvation as it allows a request to monopolize the resources.
+
+In these circumstances, RR and/or MLFB COULD greatly outperform SJF. I say could because depending on the mix of requests MLFB without
+aging could also result in starvation if requests for smaller files kept coming in. Therefore, out of the three schedulers we have implemented
+RR would be the safest best for repeatable performance regardless of the mix of requests however there are circumstances where both SJF and
+MFB could outperform it.
+
+
+QUESTION 2: Performance Testing - Characterization of Scheduler Performance
+
+The server performs quite well. If all jobs are connected at the same time, SJF gives the best response time but it can
+result in starvation under certain circumstances as shown in Data Series 2. In these circumstances, RR is better than SJF
+and MLFB is slightly better than RR. 
+
+
+Data Series 1: test4.in, test9.in, test14.in --> many requests send with no connection or request delay
+
+					SJF			RR			MLFB
+					0.000771	0.0007269	0.0010412
+					0.001472	0.000844	0.001296
+					0.0015309	0.0011158	0.0016789
+					0.001574	0.001929	0.002197
+					0.001987	0.002264	0.0023451
+					0.0021298	0.0026588	0.0023859
+					0.002141	0.0027289	0.0024488
+					0.0022149	0.0030451	0.002516
+					0.0024688	0.003279	0.0028522
+					0.0025799	0.0035651	0.0033989
+					0.0029271	0.0045309	0.003706
+					0.0030251	0.004662	0.004215
+					0.0031459	0.0047121	0.004354
+					0.0033219	0.004859	0.0044041
+					0.004349	0.0052071	0.004427
+					0.0045149	0.005446	0.004488
+					0.0045688	0.0057988	0.005131
+					0.0046751	0.006016	0.005574
+					0.005415	0.0064881	0.0064161
+					0.006918	0.0069101	0.0066931
+					0.0073459	0.008374	0.006705
+					0.007369	0.0092778	0.0070019
+					0.01193		0.0093641	0.0085208
+					0.0121598	0.009923	0.0119529
+					0.012799	0.010066	0.0137579
+					0.012861	0.010936	0.014344
+					0.0169492	0.0157082	0.0146971
+					0.0243959	0.027077	0.0263062
+					0.0270269	0.0319591	0.0306418
+					0.035095	0.0325911	0.03509
+Average Resp. Time	0.007655393	0.008068767	0.00801953
+Standard Deviation	0.008408193	0.008380387	0.008630187
+
+
+Data Series 2: test4_2.in, test9_2.in, test14_2.in --> many requests sent where one is for a large file followed by a
+small delay and another series of requests for smaller files.
+
+						SJF 2		RR 2		MLFB 2
+						2.342021	2.5453269	2.457365
+						0.0056629	0.0080478	0.0062709
+						0.004746	0.0045519	0.0037789
+						0.0043061	0.004771	0.0040159
+						0.0038099	0.003212	0.0035489
+						0.0025749	0.0020931	0.001734
+						0.004488	0.0064969	0.0054359
+						0.0014179	0.0029941	0.002151
+						1.8343451	0.0015841	0.001446
+						1.83443		0.0017259	0.0012629
+						1.8340042	0.0009079	0.0025079
+						1.8344648	0.0007701	0.002692
+						1.8343401	0.0015111	0.002121
+						1.8332419	0.00174		0.0019681
+Average Resp. Time		0.9552752	0.1846952	0.178307029
+Standard Deviation		0.995908408	0.67943998	0.655959678

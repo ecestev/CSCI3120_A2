@@ -1,0 +1,29 @@
+Student CSID: ssampson
+Assignment 2 Feedback
+
+/*
+ *
+ * Please note that comments on any mark deductions are given below the mark breakdown.
+ *
+ */
+
+Code
+    + Structure and Design of Web Server    10/10
+    + Shortest Job First Scheduler           5/5 
+    + Round Robin Scheduler                  5/5 
+    + Multilevel Queues w/ Feedback          5/5 
+    + Functionality (automated tests)       25/25
+    Test Suite 
+    + Quality (effectiveness of the tests)  10/10
+    + Number of tests                       15/15
+    Written Work 
+    + Question 1                             5/5 
+    + Question 2                            10/10
+    Code Clarity                            10/10
+    Bonus: Cool Scheduler                    /5
+   -----------------------------------------------------------
+   Total                                   100/100
+
+
+Comments:
+

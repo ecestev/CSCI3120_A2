@@ -1,0 +1,45 @@
+Title: SJF - Performance Testing
+
+Author: Stephen Sampson B00568374
+
+Purpose: The purpose of this test is to categorize the response times for the SJF method where a series
+of HTTP requests are all sent at the same time. Processing order will be random so we will deal with averages.
+
+
+Characterization of the SJF Algorithm:
+
+					SJF
+					0.000771
+					0.001472
+					0.0015309
+					0.001574
+					0.001987
+					0.0021298
+					0.002141
+					0.0022149
+					0.0024688
+					0.0025799
+					0.0029271
+					0.0030251
+					0.0031459
+					0.0033219
+					0.004349
+					0.0045149
+					0.0045688
+					0.0046751
+					0.005415
+					0.006918
+					0.0073459
+					0.007369
+					0.01193
+					0.0121598
+					0.012799
+					0.012861
+					0.0169492
+					0.0243959
+					0.0270269
+					0.035095
+Average Resp. Time	0.007655393
+Standard Deviation	0.008408193
+
+

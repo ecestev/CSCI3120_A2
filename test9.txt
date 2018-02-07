@@ -1,0 +1,43 @@
+Title: RR - Performance Testing
+
+Author: Stephen Sampson B00568374
+
+Purpose: The purpose of this test is to categorize the response times for the RR method where a series
+of HTTP requests are all sent at the same time. Processing order will be random so we will deal with averages.
+
+
+Characterization of the RR Algorithm:
+
+					RR
+					0.0007269
+					0.000844
+					0.0011158
+					0.001929
+					0.002264
+					0.0026588
+					0.0027289
+					0.0030451
+					0.003279
+					0.0035651
+					0.0045309
+					0.004662
+					0.0047121
+					0.004859
+					0.0052071
+					0.005446
+					0.0057988
+					0.006016
+					0.0064881
+					0.0069101
+					0.008374
+					0.0092778
+					0.0093641
+					0.009923
+					0.010066
+					0.010936
+					0.0157082
+					0.027077
+					0.0319591
+					0.0325911
+Average Resp. Time	0.008068767
+Standard Deviation	0.008380387

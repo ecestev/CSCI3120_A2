@@ -1,0 +1,20 @@
+Title: MLFB Requests for Identical File
+
+Author: Stephen Sampson B00568374
+
+Purpose: The purpose of this test is to see how the web server will react when the client
+sends a a series of HTTP requests all for the same file.
+
+Expected Result: The web server should add all valid requests to the queue. Since they are all 
+the same size they will end up in the same queues and will finish in order of sequence.
+
+The printed sequence on the server side will be 
+
+Request 1 Completed
+Request 2 Completed
+Request 3 Completed
+Request 4 Completed
+Request 5 Completed
+
+On the client side, five HTTP responses will be sent 'HTTP/1.1 200 OK' followed by the file
+that was requested.

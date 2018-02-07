@@ -1,0 +1,39 @@
+Title: SJF - Performance Testing
+
+Author: Stephen Sampson B00568374
+
+Purpose: The purpose of this test is to categorize the response times for the SJF method where a series
+of HTTP requests are all sent at the same time followed by a delay and another series send at the same time. 
+The first batch of requests contains a large file so the purpose is to see how this impacts the average response time. 
+
+Processing order will be random so we will deal with averages.
+
+
+Expected Result: Average response time will be greatly increased as the second batch of jobs will exhibit starvation - 
+waiting in the queue until the large (1GB) file requested in the first batch of requests is completed.
+
+Characterization of the SJF Algorithm:
+
+					SJF
+					2.342021
+					0.0056629
+					0.004746
+					0.0043061
+					0.0038099
+					0.0025749
+					0.004488
+					0.0014179
+					1.8343451
+					1.83443
+					1.8340042
+					1.8344648
+					1.8343401
+					1.8332419
+					
+Average Resp. Time	0.9552752
+Standard Deviation	0.995908408
+
+
+
+
+

@@ -1,0 +1,40 @@
+Title: RR - Performance Testing 2
+
+Author: Stephen Sampson B00568374
+
+Purpose: The purpose of this test is to categorize the response times for the RR method using the same .in file as 
+for test4_2.in where a series of HTTP requests are all sent at the same time followed by a delay and another series 
+send at the same time. The first batch of requests contains a large file so the purpose is to see how this impacts 
+the average response time. 
+
+Processing order will be random so we will deal with averages.
+
+
+Expected Result: Average response time will be greatly reduced vs SJF method using this same .in file due to the elimination
+of starvation.
+
+Characterization of the RR Algorithm:
+
+					RR Test 2
+					2.5453269
+					0.0080478
+					0.0045519
+					0.004771
+					0.003212
+					0.0020931
+					0.0064969
+					0.0029941
+					0.0015841
+					0.0017259
+					0.0009079
+					0.0007701
+					0.0015111
+					0.00174
+
+					Average Resp.Time 0.1846952
+					Standard Deviation 0.67943998
+
+
+
+
+

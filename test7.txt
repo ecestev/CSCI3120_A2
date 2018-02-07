@@ -1,0 +1,30 @@
+Title: RR - Requests for Same File Spread Randomly Throughout Series of Requests for Files of 
+Different Sizes
+
+Author: Stephen Sampson B00568374
+
+Purpose: The purpose of this test is to see how the web server will react when the client
+sends a series of HTTP requests in a random order where some of the requests are for the same file.
+
+
+Expected Result: The web server should add all valid requests to the queue. Jobs will be added to the back
+of the queue as they come in and processed 8KB at a time from the front of the queue. After each 8KB is sent
+if more jobs are waiting to queue they will be added to the back of the queue as well. 
+
+Given the mix of jobs, it is expected that jobs will finish in the same order as they did using the SJF algortihm.
+It is becoming clear that this will typically be the case. We will see in test9 and test9_2 however that this is not 
+always the case as RR avoids starvation unlike SJF. 
+
+The printed sequence on the server side will be 
+
+Request 6 Completed
+Request 3 Completed
+Request 4 Completed
+Request 5 Completed
+Request 8 Completed
+Request 2 Completed
+Request 7 Completed
+Request 1 Completed
+
+On the client side, eight HTTP responses will be sent 'HTTP/1.1 200 OK' followed by the file
+that was requested.

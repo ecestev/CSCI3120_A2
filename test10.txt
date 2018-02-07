@@ -1,0 +1,19 @@
+Title: MLFB File not Found
+
+Author: Stephen Sampson B00568374
+
+Purpose: The purpose of this test is to see how the web server will react when the client
+sends a a series of HTTP requests where one request is for a filename that does not match
+any files in the working directory.
+
+Expected Result: The web server should add all valid requests to the queue. The request for
+the file not found will not be assigned a sequence order or added to the queue, therefore 
+the printed sequence on the server side will be 
+
+Request 2 Completed
+Request 4 Completed
+Request 3 Completed
+Request 5 Completed
+Request 1 Completed
+
+On the client side, six HTTP responses will be sent, the third being 'HTTP/1.1 404 File Not Found'

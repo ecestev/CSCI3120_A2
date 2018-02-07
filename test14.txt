@@ -1,0 +1,44 @@
+Title: MLFB - Performance Testing
+
+Author: Stephen Sampson B00568374
+
+Purpose: The purpose of this test is to categorize the response times for the MFB method where a series
+of HTTP requests are all sent at the same time. Processing order will be random so we will deal with averages.
+
+
+Characterization of the MLFB Algorithm:
+
+					MLFB
+					0.0010412
+					0.001296
+					0.0016789
+					0.002197
+					0.0023451
+					0.0023859
+					0.0024488
+					0.002516
+					0.0028522
+					0.0033989
+					0.003706
+					0.004215
+					0.004354
+					0.0044041
+					0.004427
+					0.004488
+					0.005131
+					0.005574
+					0.0064161
+					0.0066931
+					0.006705
+					0.0070019
+					0.0085208
+					0.0119529
+					0.0137579
+					0.014344
+					0.0146971
+					0.0263062
+					0.0306418
+					0.03509
+Average Resp. Time	0.00801953
+Standard Deviation	0.008630187
+
